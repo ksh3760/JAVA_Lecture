@@ -1,5 +1,3 @@
-package 스트림연습;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
