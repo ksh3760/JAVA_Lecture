@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class CharEncodingTest {
 	public static void main(String[] args) throws IOException {
-		// 문자 
+		// 문자 인코딩
 		
 		File fileDir = new File("input.txt");
 		BufferedReader in = new BufferedReader(new InputStreamReader(
