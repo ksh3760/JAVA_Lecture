@@ -1,4 +1,4 @@
-package p20201124¹ÙÀÌÆ®½ºÆ®¸²;
+package p20201124ë°”ì´íŠ¸ìŠ¤íŠ¸ë¦¼;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,19 +7,19 @@ import java.io.IOException;
 public class wdb {
 
 	public static void main(String[] args) {
-		// ¹ÙÀÌ³Ê¸® ÆÄÀÏÀ» »ı¼ºÇØ¼­ °ªÀ» ÀúÀå
+		// ë°”ì´ë„ˆë¦¬ íŒŒì¼ì„ ìƒì„±í•´ì„œ ê°’ì„ ì €ì¥
 		FileOutputStream out = null;
 		byte[] array = new byte[30];
 		
-		// »õ·Î¿î ÆÄÀÏÀ» ¸¸µç´Ù.
+		// ìƒˆë¡œìš´ íŒŒì¼ì„ ë§Œë“ ë‹¤.
 		try {
-			out = new FileOutputStream("C:\\Users\\SH\\Desktop\\test\\a.bin");
+			out = new FileOutputStream("a.bin");
 			
 			for(int i = 0 ; i < 30 ; i++) {
 				array[i] = (byte)i;
 			}
 			
-			// ÆÄÀÏ¿¡ µ¥ÀÌÅÍ¸¦ º¸³½´Ù.
+			// íŒŒì¼ì— ë°ì´í„°ë¥¼ ë³´ë‚¸ë‹¤.
 //			out.write(1);
 			out.write(array);
 			
