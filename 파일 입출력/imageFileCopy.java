@@ -1,4 +1,4 @@
-package ½ºÆ®¸²¿¬½À;
+package ìŠ¤íŠ¸ë¦¼ì—°ìŠµ;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,11 +9,13 @@ import java.util.Scanner;
 
 public class imageFileCopy {
     public static void main(String[] args) throws IOException {
+    // íŒŒì¼ ë³µì‚¬í•˜ê¸°
+    	
     	Scanner scn = new Scanner(System.in);
-        System.out.print("¿øº» ÆÄÀÏ ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+        System.out.print("ë³µì‚¬í•  ì›ë³¸ íŒŒì¼ ëª…ì„ ì…ë ¥í•˜ì„¸ìš” : ");
         String inputFileName = scn.next();
 
-        System.out.print("º¹»çÇÏ´Â ÆÄÀÏ ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+        System.out.print("ë³µì‚¬í•˜ëŠ” íŒŒì¼ ëª…ì„ ì…ë ¥í•˜ì„¸ìš” : ");
         String outputFileName = scn.next();
 
         try (InputStream inputStream = new FileInputStream(inputFileName);
@@ -24,7 +26,7 @@ public class imageFileCopy {
                     outputStream.write(c);
                 }
             }
-            System.out.println(inputFileName + "À» " + outputFileName + "(À¸)·Î º¹»çÇÏ¿´½À´Ï´Ù.");
+            System.out.println(inputFileName + "ì„ " + outputFileName + "(ìœ¼)ë¡œ ë³µì‚¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
 
    }
 }
