@@ -1,4 +1,4 @@
-package ½ºÆ®¸²¿¬½À;
+package Â½ÂºÃ†Â®Â¸Â²Â¿Â¬Â½Ã€;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 public class CharEncodingTest {
 	public static void main(String[] args) throws IOException {
-		// ¹®ÀÚ ÀÎÄÚµù
+		// ë¬¸ì 
 		
 		File fileDir = new File("input.txt");
 		BufferedReader in = new BufferedReader(new InputStreamReader(
