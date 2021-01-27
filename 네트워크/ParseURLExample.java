@@ -1,12 +1,11 @@
-package ³×Æ®¿öÅ©¿¬½À;
-// URL Å¬·¡½º
+// URL í´ë˜ìŠ¤
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ParseURLExample {
 
 	public static void main(String[] args) throws Exception {
-		URL myURL = new URL("http://java.sun.com:80/docs/books/tutorial" + "/index.html?name=database#TOP");	// °´Ã¼»ı¼º
+		URL myURL = new URL("http://java.sun.com:80/docs/books/tutorial" + "/index.html?name=database#TOP");	// ê°ì²´ìƒì„±
 		
 		System.out.println("protocol  = " + myURL.getProtocol());
 		System.out.println("authority = " + myURL.getAuthority());
