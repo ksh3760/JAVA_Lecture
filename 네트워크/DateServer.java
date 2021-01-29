@@ -1,5 +1,5 @@
-// ³¯Â¥ ¼­¹ö
-// ¼­¹ö´Â Å¬¶óÀÌ¾ğÆ® ÃøÀ¸·Î ³¯Â¥¸¦ Àü¼Û
+// ë‚ ì§œ ì„œë²„
+// ì„œë²„ëŠ” í´ë¼ì´ì–¸íŠ¸ ì¸¡ìœ¼ë¡œ ë‚ ì§œë¥¼ ì „ì†¡
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,17 +9,17 @@ import java.util.Date;
 
 public class DateServer {
 	public static void main(String[] args) throws IOException {
-		ServerSocket ss = new ServerSocket(9100);	// Æ÷Æ® 9100¹øÀ¸·Î ¼­¹ö ¼ÒÄ¹À» »ı¼º
+		ServerSocket ss = new ServerSocket(9090);	// í¬íŠ¸ 9100ë²ˆìœ¼ë¡œ ì„œë²„ ì†Œìº£ì„ ìƒì„±
 		 
 		try {
 			while (true) {
-				Socket socket = ss.accept();	// Å¬¶óÀÌ¾ğÆ®ÀÇ ¿¬°áÀ» ±â´Ù¸²
-												// ¼­¹ö´Â ¹«ÇÑÈ÷ ½ÇÇà
+				Socket socket = ss.accept();	// í´ë¼ì´ì–¸íŠ¸ì˜ ì—°ê²°ì„ ê¸°ë‹¤ë¦¼
+												// ì„œë²„ëŠ” ë¬´í•œíˆ ì‹¤í–‰
 			
 				try {
 					PrintWriter out = new PrintWriter(
 							socket.getOutputStream(), true);
-					out.println(new Date().toString());	// ³¯Â¥¸¦ Å¬¶óÀÌ¾ğÆ®·Î Àü¼Û
+					out.println(new Date().toString());	// ë‚ ì§œë¥¼ í´ë¼ì´ì–¸íŠ¸ë¡œ ì „ì†¡
 					
 				} finally {
 					socket.close();
