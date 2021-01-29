@@ -1,5 +1,5 @@
-// ³¯Â¥ Å¬¶óÀÌ¾ğÆ®
-// ¼­¹ö·Î ºÎÅÍ ³¯Â¥ Á¤º¸¸¦ ¹Ş´Â´Ù.
+// ë‚ ì§œ í´ë¼ì´ì–¸íŠ¸
+// ì„œë²„ë¡œ ë¶€í„° ë‚ ì§œ ì •ë³´ë¥¼ ë°›ëŠ”ë‹¤.
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,10 +8,10 @@ import java.net.Socket;
 
 public class DataClient {
 	public static void main(String[] args) throws IOException {
-		Socket s = new Socket("localhost", 9100);	// Æ÷Æ® 9100¹ö´É·Î ¿¬°á ½Ãµµ
+		Socket s = new Socket("localhost", 9090);	// í¬íŠ¸ 9100ë²„ëŠ¥ë¡œ ì—°ê²° ì‹œë„
 		
 		BufferedReader input = new BufferedReader(
-				new InputStreamReader(s.getInputStream()));	// ¼ÒÄÏÀ¸·ÎºÎÅÍ ½ºÆ®¸²À» ¾ò´Â´Ù.
+				new InputStreamReader(s.getInputStream()));	// ì†Œì¼“ìœ¼ë¡œë¶€í„° ìŠ¤íŠ¸ë¦¼ì„ ì–»ëŠ”ë‹¤.
 		
 		String res = input.readLine();
 		System.out.println(res);
