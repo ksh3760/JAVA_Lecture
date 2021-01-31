@@ -1,24 +1,25 @@
-package ³×Æ®¿öÅ©¿¬½À;
-// Å¬¶óÀÌ¾ğÆ® ÃøÀ¸·Î ºÎÅÍ pingÀ» ¹ŞÀ¸¸é pongÀ» ¹İÈ¯
+// í´ë¼ì´ì–¸íŠ¸ ì¸¡ìœ¼ë¡œ ë¶€í„° pingì„ ë°›ìœ¼ë©´ pongì„ ë°˜í™˜
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import com.sun.java.accessibility.util.Translator;
 
 public class PingPongServer {
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("¼­¹ö°¡ ½ÇÇàÁßÀÔ´Ï´Ù.");
+		System.out.println("ì„œë²„ê°€ ì‹¤í–‰ì¤‘ì…ë‹ˆë‹¤.");
 
 		int clientId = 0;
 		
-		ServerSocket ss = new ServerSocket(9090);	// 9090 Æ÷Æ®·Î ¼­¹ö ¼ÒÄÏ »ı¼º
+		ServerSocket ss = new ServerSocket(9090);	// 9090 í¬íŠ¸ë¡œ ì„œë²„ ì†Œì¼“ ìƒì„±
 		
 		try {
 			while (true) {
 				clientId ++;
-				Translator t = new Translator(ss.accept(), clientId);
+				PingPong t = new PingPong(ss.accept(), clientId);
 				t.start();
 			}
 		} finally {
@@ -27,10 +28,49 @@ public class PingPongServer {
 		
 	} // end main
 
-	private static class Translator extends Thread {
+	private static class PingPong extends Thread {
 		private Socket socket;
 		private int myId;
 		
-	}
+		public PingPong(Socket socket, int clientId) {
+			this.socket = socket;
+			this.myId = clientId;
+		}
+		
+		public void run() {
+			try {
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(socket.getInputStream()));
+				
+				PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+				
+				out.println("í´ë¼ì´ì–¸íŠ¸ ë²ˆí˜¸ëŠ” " + myId + "ì…ë‹ˆë‹¤.");
+				out.println("ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+				
+				while (true) {
+					String input = in.readLine();
+					
+					if (input.equals("ping") == true) {
+						out.println("pong");
+					} else {
+						out.println("");
+					}
+					
+				}
+				
+			} catch (IOException e) {
+				System.out.println("í´ë¼ì´ì–¸íŠ¸ ë²ˆí˜¸: " + myId + "ì²˜ë¦¬ ì‹¤íŒ¨" + e);
+			} finally {
+				try {
+					socket.close();
+				} catch (IOException e) {
+					System.out.println("ì†Œì¼“ ì¢…ë£Œ ì˜¤ë¥˜" + e);
+				}
+				System.out.println("í´ë¼ì´ì–¸íŠ¸ ë²ˆí˜¸: " + myId + "ì²˜ë¦¬ ì¢…ë£Œ");
+			}
+			
+		} // end public void run()
+		
+	} // end private static class PingPong extends Thread
 	
 } // end class PingPongServer
