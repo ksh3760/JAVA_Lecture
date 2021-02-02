@@ -1,5 +1,3 @@
-package ³×Æ®¿öÅ©¿¬½À;
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +19,7 @@ public class PingPongClient extends JFrame implements ActionListener {
 	private JTextArea area;
 	
 	public PingPongClient() throws Exception, IOException {
-		setTitle("Å¬¶óÀÌ¾ğÆ®");
+		setTitle("í´ë¼ì´ì–¸íŠ¸ ì°½");
 		setSize(500, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
@@ -35,8 +33,8 @@ public class PingPongClient extends JFrame implements ActionListener {
 		add(field, BorderLayout.NORTH);
 		add(area, BorderLayout.CENTER);
 		
-		// ¼­¹ö¿¡ Á¢¼ÓÇÏ¿© ¼ÒÄÏÀ» »ı¼º
-		// ¼ÒÄÏ¿¡ ½ºÆ®¸²À» ¿¬°á
+		// ì„œë²„ì— ì ‘ì†í•˜ì—¬ ì†Œì¼“ì„ ìƒì„±
+		// ì†Œì¼“ì— ìŠ¤íŠ¸ë¦¼ì„ ì—°ê²°
 		Socket socket = new Socket("localhost", 9090);
 		in = new BufferedReader(new InputStreamReader(
 				socket.getInputStream()));
@@ -46,10 +44,11 @@ public class PingPongClient extends JFrame implements ActionListener {
 		area.append(in.readLine() + "\n");
 	}
 	
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// ¿£ÅÍÅ°°¡ ÀÔ·ÂµÇ¸é ¼­¹ö·Î ÀÔ·ÂÇÑ ¹®ÀåÀ» Àü¼Û
-		// ¼­¹ö·Î ºÎÅÍ ¿À´Â ´Ü¾î¸¦ Ç¥½Ã
+		// ì—”í„°í‚¤ê°€ ì…ë ¥ë˜ë©´ ì„œë²„ë¡œ ì…ë ¥í•œ ë¬¸ì¥ì„ ì „ì†¡
+		// ì„œë²„ë¡œ ë¶€í„° ì˜¤ëŠ” ë‹¨ì–´ë¥¼ í‘œì‹œ
 		out.println(field.getText());
 		String response = null;
 		
@@ -60,6 +59,7 @@ public class PingPongClient extends JFrame implements ActionListener {
 		}
 		area.append(response + "\n");
 	}
+	
 
 	public static void main(String[] args) throws Exception {
 		PingPongClient client = new PingPongClient();
