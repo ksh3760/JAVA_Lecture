@@ -1,4 +1,4 @@
-package À¥ÀÌ¹ÌÁöÆÄÀÏ´Ù¿î;
+package ì›¹ì´ë¯¸ì§€íŒŒì¼ë‹¤ìš´;
 
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -8,28 +8,28 @@ import java.net.URL;
 public class DownloadImage {
 
 	public static void main(String[] args) throws Exception {
-		String webSite = "ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä";
-		System.out.println("" + webSite + " ¿¡¼­ ÀÌ¹ÌÁö¸¦ ´Ù¿î·Îµå");
+		String webSite = "ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”";
+		System.out.println("" + webSite + " ì—ì„œ ì´ë¯¸ì§€ë¥¼ ë‹¤ìš´ë¡œë“œ");
 
 		URL url = new URL(webSite);
 		byte[] buffer = new byte[2048];
 		
 		try (InputStream in = url.openStream();
-				OutputStream out = new FileOutputStream("test.jpg");) {	// ÆÄÀÏ¸í
+				OutputStream out = new FileOutputStream("test.jpg");) {	// íŒŒì¼ëª…
 			int length = 0;
 			
 			while ((length = in.read(buffer)) != -1) {
-				System.out.println("" + length + "¹ÙÀÌÆ® ¸¸Å­ ÀĞ¾úÀ½");
+				System.out.println("" + length + "ë°”ì´íŠ¸ ë§Œí¼ ì½ì—ˆìŒ");
 				out.write(buffer, 0, length);
 			}
 			
 			in.close();
 			out.close();
 			
-			System.out.println("¿Ï·á");
+			System.out.println("ì™„ë£Œ");
 			
 		} catch (Exception e) {
-			System.out.println("¿¹¿Ü : " + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 		
 	}
